@@ -1,4 +1,5 @@
 <script setup>
+
 import Cards from './components/Cards/Cards.vue';
 import css from './components/Cards/Card.module.css';
 import {ref} from 'vue';
@@ -15,10 +16,12 @@ const inputLocate = ref("");
 function checkNesting(locate){
   return locate.toLowerCase().includes(inputLocate.value.toLowerCase());
 }
+
 </script>
 
 
 <template>
+
   <h1 :class="css.myClass" >//HW3//</h1>
   <input v-model="inputLocate"/>
 
@@ -31,3 +34,4 @@ function checkNesting(locate){
 </template>
 
 <style></style>
+

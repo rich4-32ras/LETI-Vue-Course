@@ -1,0 +1,23 @@
+.myClass {
+    color: brown
+}
+
+.myInput {
+    box-sizing: border-box;
+    background-color: rgb(176, 175, 175);
+    color: black;
+    margin: 30px;
+}
+
+.myRectangleCard {
+    padding: 2px 16px;
+    width: 70%;
+    background-color: brown;
+    border: 3px rgb(255, 255, 255) solid;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.myRectangleCard:hover {
+    background-color: rgb(196, 39, 39);
+}
