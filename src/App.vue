@@ -1,37 +1,15 @@
 <script setup>
-
-import Cards from './components/Cards/Cards.vue';
-import css from './components/Cards/Card.module.css';
 import {ref} from 'vue';
-
-const cards = ref([
-  {locate: "America/New_York"},
-  {locate: "America/Los_Angeles"},
-  {locate: "Russia/Moscow"},
-  {locate: "Asia/Tokyo"},
-]);
-
-const inputLocate = ref("");
-
-function checkNesting(locate){
-  return locate.toLowerCase().includes(inputLocate.value.toLowerCase());
-}
-
+import Popup from './components/Popup/Popup.vue';
+import css from './App.module.css'
+const isOpen = ref(false);
 </script>
 
-
 <template>
-
-  <h1 :class="css.myClass" >//HW3//</h1>
-  <input v-model="inputLocate"/>
-
-  <template v-for="({locate}) in cards">
-      <Cards v-if="checkNesting(locate)" v-slot="time" :locate="locate">
-        <h2>{{ locate }}</h2>
-        <p>{{ time.time }}</p>
-      </Cards>
-  </template>
+  <div :class="css.container">
+    <button :class="css.btn" @click="isOpen = !isOpen">magick clik</button>
+  </div>
+  <Popup :open="isOpen" @close="isOpen = false">Всплывашка</Popup>
 </template>
 
-<style></style>
-
+<style scoped></style>
